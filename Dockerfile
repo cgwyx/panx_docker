@@ -25,14 +25,13 @@ RUN conda update --all -y &&\
          git clone https://github.com/neherlab/pan-genome-analysis.git &&\
          cd pan-genome-analysis &&\
          git submodule update --init &&\
-         conda env create -f panX-environment.yml &&\
-         source activate panX
+         conda env create -f panX-environment.yml
 
 #Expose port 8000 (webserver)
 EXPOSE :8000
 
 WORKDIR /pan-genome-analysis
 
-CMD ["/bin/bash"]
+CMD ["source activate panX"]
 
 
